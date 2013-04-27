@@ -11,7 +11,12 @@ describe('my module', function () {
     myModule.should.be.a("function")
   });
   
-  var html = '<html><body><div id="mydivid"><span class="myspanclass1"></span><span class="myspanclass2"></span></div></body></html>';
+  var html = '<html><body>' +
+    '<div id="mydivid">' +
+    '<span class="myspanclass1"></span>' +
+    '<span class="myspanclass2"></span>' +
+    '</div>' +
+    '</body></html>';
   var o = myModule(html);
 
   it("should find body > div#mydivid", function () {
