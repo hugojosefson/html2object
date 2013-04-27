@@ -17,7 +17,7 @@ function nodes2object(nodes) {
 
 function possiblyAddNodeToResult(result, node) {
   var key = node.id || nameOfNode(node) || classOfNode(node);
-  if (key) {
+  if (key && !result[key]) {  // Only use first node. Don't overwrite existing.
     result[key] = node2object(node);
   }
 }

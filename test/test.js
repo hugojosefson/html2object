@@ -37,6 +37,21 @@ describe('my module', function () {
     });
   });
 
+  it("should find body > div#mydivid > spanclass2 > icon-ok", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      o.mydivid.myspanclass2.should.have.property("icon-ok");
+      o.mydivid.myspanclass2["icon-ok"].should.be.an("object");
+      done();
+    });
+  });
+
+  it("should NOT find body > div#mydivid > spanclass2 > icon-nok", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      o.mydivid.myspanclass2.should.not.have.property("icon-nok");
+      done();
+    });
+  });
+
   function prepareFixtureObject(done, cb) {
     getFile("fixture.html", function (err, html) {
       if (err) {
