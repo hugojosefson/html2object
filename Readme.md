@@ -3,6 +3,8 @@
 
   Converts an HTML string to a JS object, ready for consumption by a JS single page web app.
 
+[![Build Status](https://travis-ci.org/hugojosefson/html2object.png)](https://travis-ci.org/hugojosefson/html2object)
+
 ## Installation
 
     $ component install hugojosefson/html2object
