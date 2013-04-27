@@ -52,6 +52,13 @@ describe('my module', function () {
     });
   });
 
+  it("should find 2 objects in body > div#mydivid", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      Object.keys(o.mydivid).length.should.equal(2);
+      done();
+    });
+  });
+
   function prepareFixtureObject(done, cb) {
     getFile("fixture.html", function (err, html) {
       if (err) {
