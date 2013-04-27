@@ -83,6 +83,15 @@ describe('my module', function () {
     });
   });
 
+  it("should find body > form[name='myform'] > input[name='firstname'] value", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      o.myform.lastname.should.have.property("_attributes");
+      o.myform.lastname._attributes.should.have.property("value");
+      o.myform.lastname._attributes.value.should.equal("Hugo");
+      done();
+    });
+  });
+
   function prepareFixtureObject(done, cb) {
     getFile("fixture.html", function (err, html) {
       if (err) {

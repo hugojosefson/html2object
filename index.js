@@ -1,6 +1,7 @@
 var domify = require("domify");
+var _ = require("underscore");
 
-module.exports = html2object;
+  module.exports = html2object;
 
 function html2object(html) {
   var nodes = domify(html);
@@ -31,5 +32,24 @@ function classOfNode(node) {
 }
 
 function node2object(node) {
-  return nodes2object(node.childNodes);
+  var o = nodes2object(node.childNodes);
+  var attributes = extractAttributesFromNode(node);
+  if (attributes) {
+    o._attributes = attributes;
+  }
+  return  o;
+}
+
+function extractPairsOfKeyValue(attributes) {
+  return _.map(attributes, function (attribute) {
+    return [attribute.name, attribute.value];
+  });
+}
+
+function extractAttributesFromNode(node) {
+  if (node.attributes) {
+    return _.object(extractPairsOfKeyValue(node.attributes));
+  } else {
+    return null;
+  }
 }

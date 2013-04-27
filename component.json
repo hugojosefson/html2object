@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "keywords": ["html", "object", "convert", "converter", "json", "hypermedia"],
   "dependencies": {
-    "component/domify": "*"
+    "component/domify": "*",
+    "documentcloud/underscore": "*"
   },
   "development": {
     "jofan/get-file": "*"
