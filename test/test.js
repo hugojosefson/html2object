@@ -67,6 +67,22 @@ describe('my module', function () {
     });
   });
 
+  it("should find body > form[name='myform'] > input[name='firstname']", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      o.myform.should.have.property("firstname");
+      o.myform.firstname.should.be.an("object");
+      done();
+    });
+  });
+
+  it("should find body > form[name='myform'] > input[name='lastname']", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      o.myform.should.have.property("lastname");
+      o.myform.lastname.should.be.an("object");
+      done();
+    });
+  });
+
   function prepareFixtureObject(done, cb) {
     getFile("fixture.html", function (err, html) {
       if (err) {
