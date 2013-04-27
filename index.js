@@ -19,8 +19,16 @@ function nodes2object(nodes) {
 }
 
 function possiblyAddNodeToResult(result, node) {
-  var key = node.id || node.name || node.class;
+  var key = node.id || nameOfNode(node) || classOfNode(node);
   if (key) {
-    result[key] = node;
+    result[key] = nodes2object(node.childNodes);
   }
+}
+
+function nameOfNode(node) {
+  return node.attributes.name && node.attributes.name.value;
+}
+
+function classOfNode(node) {
+  return node.attributes.class && node.attributes.class.value;
 }
