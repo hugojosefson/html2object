@@ -21,7 +21,7 @@ function nodes2object(nodes) {
 function possiblyAddNodeToResult(result, node) {
   var key = node.id || nameOfNode(node) || classOfNode(node);
   if (key) {
-    result[key] = nodes2object(node.childNodes);
+    result[key] = node2object(node);
   }
 }
 
@@ -31,4 +31,8 @@ function nameOfNode(node) {
 
 function classOfNode(node) {
   return node.attributes.class && node.attributes.class.value;
+}
+
+function node2object(node) {
+  return nodes2object(node.childNodes);
 }
