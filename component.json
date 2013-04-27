@@ -1,0 +1,14 @@
+{
+  "name": "html2object",
+  "repo": "hugojosefson/html2object",
+  "description": "Converts an HTML string to a JS object, ready for consumption by a JS single page web app.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
