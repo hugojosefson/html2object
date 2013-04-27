@@ -1,27 +1,25 @@
 // TODO: use less (heavy) dependencies
 
-var jQuery = require("jquery");
+var domify = require("domify");
 var _ = require("underscore");
 
 module.exports = html2object;
 
 function html2object(html) {
-  var jqHtml = jQuery(html);
-  return parseChildren(jqHtml.children());
+  var nodes = domify(html);
+  var result = {};
+  _.each(nodes, function(node){
+    possiblyAddNodeToResult(result, node);
+  });
+  return result;
 }
 
-function parseChildren(children) {
-  return _.map(children, parseChild);
-}
-
-function parseChild(child) {
-  if (child.id) {
-    return [child.id, parseChildren(child.children())];
-  } else if (child.name) {
-    return [child.name, parseChildren(child.children())];
-  } else if (child.class) {
-    return [child.class, parseChildren(child.children())];
-  } else {
-    return null;
+function possiblyAddNodeToResult(result, node) {
+  if (node.id) {
+    result[node.id] = node;
+  } else if (node.name) {
+    result[node.name] = node;
+  } else if (node.class) {
+    result[node.class] = node;
   }
 }
