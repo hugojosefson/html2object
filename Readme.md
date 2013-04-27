@@ -9,7 +9,7 @@
 
 ## API
 
-   
+    var jsObject = require("html2object")(html);
 
 ## License
 
