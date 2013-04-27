@@ -1,7 +1,4 @@
-// TODO: use less (heavy) dependencies
-
 var domify = require("domify");
-var _ = require("underscore");
 
 module.exports = html2object;
 
@@ -12,9 +9,9 @@ function html2object(html) {
 
 function nodes2object(nodes) {
   var result = {};
-  _.each(nodes, function (node) {
-    possiblyAddNodeToResult(result, node);
-  });
+  for (var i = 0; i < nodes.length; i++) {
+    possiblyAddNodeToResult(result, nodes[i]);
+  }
   return result;
 }
 
