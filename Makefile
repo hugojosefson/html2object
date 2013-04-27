@@ -4,10 +4,10 @@ npm-install:
 	@npm install
 
 build: install index.js
-	@component build --dev
+	@./node_modules/component/bin/component-build --dev
 
 components: component.json
-	@component install --dev
+	@./node_modules/component/bin/component-install --dev
 
 test: build
 	@echo test ...
