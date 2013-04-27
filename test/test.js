@@ -59,6 +59,14 @@ describe('my module', function () {
     });
   });
 
+  it("should find body > form[name='myform']", function (done) {
+    prepareFixtureObject(done, function (err, o) {
+      o.should.have.property("myform");
+      o.myform.should.be.an("object");
+      done();
+    });
+  });
+
   function prepareFixtureObject(done, cb) {
     getFile("fixture.html", function (err, html) {
       if (err) {
