@@ -23,11 +23,11 @@ function possiblyAddNodeToResult(result, node) {
 }
 
 function nameOfNode(node) {
-  return node.attributes.name && node.attributes.name.value;
+  return node.attributes && node.attributes.name && node.attributes.name.value;
 }
 
 function classOfNode(node) {
-  return node.attributes.class && node.attributes.class.value;
+  return node.attributes && node.attributes.class && node.attributes.class.value;
 }
 
 function node2object(node) {
