@@ -1,0 +1,14 @@
+{
+  "name": "html2object",
+  "version": "0.0.1",
+  "author": "Hugo Josefson <hugo@josefson.org>",
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "component": "*",
+    "mocha-phantomjs": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  }
+}

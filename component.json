@@ -4,7 +4,10 @@
   "description": "Converts an HTML string to a JS object, ready for consumption by a JS single page web app.",
   "version": "0.0.1",
   "keywords": ["html", "object", "convert", "converter", "json", "hypermedia"],
-  "dependencies": {},
+  "dependencies": {
+    "component/jquery": "*",
+    "component/underscore": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
